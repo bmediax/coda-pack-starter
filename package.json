@@ -5,8 +5,11 @@
   "scripts": {
     "postinstall": "npx patch-package",
     "test": "mocha --require ts-node/register test/*.ts",
+    "register": "npx coda register",
+    "create": "echo 'Enter Name:' && read name && echo 'Enter Description:' && read description && coda create pack.ts --name $name --description $description",
+    "dev": "npx coda execute pack.ts Hello 'World'",
     "validate": "coda validate pack.ts",
-    "upload": "coda upload pack.ts"
+    "upload": "echo 'Enter Notes:' && read notes && coda upload pack.ts --notes $notes"
   },
   "license": "MIT",
   "dependencies": {
